@@ -15,7 +15,7 @@ const SearchText = ({ text, setSearchValue }: SearchTextProps) => {
         onChange={(e) => {
           setSearchValue(e.target.value);
         }}
-        placeholder="Search..."
+        placeholder="Search News..."
         className="text-md h-10 w-full rounded-md border bg-white ps-2 text-black placeholder:text-sm focus:outline-none active:outline-none 2xl:h-8 shadow-sm"
       />
       <HiOutlineSearch
