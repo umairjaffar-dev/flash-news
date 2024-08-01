@@ -6,3 +6,9 @@ export type NewsType = {
   image: string;
   published: string;
 };
+
+export type FiltersType = {
+  id: number;
+  icon: JSX.Element;
+  name: string;
+};
