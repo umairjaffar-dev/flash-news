@@ -3,28 +3,40 @@ import { FaEye } from "react-icons/fa";
 import { AiTwotoneMessage } from "react-icons/ai";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { MdShare } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 type NewsCardPropsType = {
-  data: NewsType;
+  // data: NewsType;
+  data: any;
 };
 
 const NewsCard = ({ data }: NewsCardPropsType) => {
-  const { logo, description, heading, image, published } = data;
+
+  const {
+    description,
+    title: heading,
+    image,
+    date_published,
+    link: gotoLink,
+  } = data;
   return (
-    <div
-      className="w-2/3 flex flex-col justify-start items-start gap-2 px-3 py-2 border border-gray-300 bg-gray-100 shadow-sm rounded-md"
-    >
+    <div className="w-2/3 flex flex-col justify-start items-start gap-2 px-3 py-2 border border-gray-300 bg-gray-100 shadow-sm rounded-md">
       <div className="w-full grid grid-cols-[auto_1fr] gap-2 place-items-center px-3 py-2">
         <img
-          src={logo}
+          src={image}
           alt="logo"
           className="w-12 h-12 rounded-full shadow-sm"
         />
         <div className="w-full flex flex-col justify-start items-start gap-1">
-          <p className="w-full text-md text-gray-900 font-semibold">
-            {heading}
-          </p>
-          <p className="w-full text-sm text-gray-600">{published}</p>
+          <a
+            href={gotoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full text-md text-gray-900 font-semibold cursor-pointer"
+          >
+            <span>{heading}</span>
+          </a>
+          <p className="w-full text-sm text-gray-600">{date_published}</p>
         </div>
       </div>
       {/* Image */}
