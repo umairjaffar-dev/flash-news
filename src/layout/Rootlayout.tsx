@@ -6,7 +6,7 @@ const Rootlayout = () => {
     <div className="w-screen h-screen bg-gray-200 grid grid-rows-[auto_1fr] gap-1">
       <FlishNewsHeader />
 
-      <Wrapper></Wrapper>
+      <Wrapper />
     </div>
   );
 };
